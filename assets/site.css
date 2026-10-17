@@ -1,0 +1,77 @@
+:root { --accent: #6257ff; --accent-ink: #ffffff; --sky: #a5f3fc; }
+.hero { background: radial-gradient(circle at 85% 20%, #dcd8ff 0, transparent 42%); }
+.hero h1 span { color: var(--accent); }
+.cloud-visual { position: relative; min-height: 520px; border: 2px solid var(--ink); border-radius: 16px; background: var(--ink); box-shadow: 10px 10px 0 var(--accent); overflow: hidden; }
+.cloud-visual::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(#ffffff12 1px, transparent 1px), linear-gradient(90deg, #ffffff12 1px, transparent 1px); background-size: 32px 32px; }
+.cloud-console { position: absolute; inset: 2rem; padding: 1rem; border: 1px solid #ffffff55; border-radius: 10px; background: #20232b; color: #fff; font-family: var(--mono); }
+.console-head { display: flex; justify-content: space-between; padding-bottom: 1rem; border-bottom: 1px solid #ffffff33; font-size: .68rem; }
+.connected { color: var(--sky); }
+.cloud-phones { display: grid; grid-template-columns: repeat(3, 1fr); gap: .8rem; margin-top: 4rem; }
+.cloud-phone { min-height: 260px; padding: .7rem; border: 2px solid #fff; border-radius: 20px; background: #121418; }
+.cloud-phone:nth-child(2) { transform: translateY(-1.5rem); border-color: var(--sky); }
+.phone-screen { height: 190px; margin-top: .6rem; border-radius: 12px; background: linear-gradient(155deg, var(--accent), #171922 70%); }
+.cloud-phone small { color: #ffffff99; font-size: .55rem; }
+.console-log { margin-top: 1.5rem; color: #ffffffaa; font-size: .62rem; }
+@media (max-width: 520px) { .cloud-visual { min-height: 410px; } .cloud-console { inset: 1rem; } .cloud-phones { margin-top: 2.5rem; gap: .4rem; } .cloud-phone { min-height: 220px; padding: .4rem; } .phone-screen { height: 150px; } }
+
+.hero h1 span { display: block; }
+.cloud-visual { width: 100%; max-width: 620px; justify-self: center; }
+.cloud-console { overflow: hidden; }
+.console-head { position: relative; z-index: 2; align-items: center; gap: .75rem; line-height: 1.4; }
+.status-dot { flex: none; width: .45rem; height: .45rem; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 3px #6257ff22; }
+.connected { display: inline-flex; align-items: center; gap: .4rem; white-space: nowrap; }
+.connected .status-dot { background: var(--sky); box-shadow: 0 0 0 3px #a5f3fc1f; }
+.connection-lines { position: absolute; z-index: 0; top: 4.2rem; left: 1rem; width: calc(100% - 2rem); height: 180px; color: var(--sky); opacity: .45; pointer-events: none; }
+.connection-lines path { fill: none; stroke: currentColor; stroke-width: 1.5; stroke-dasharray: 5 7; vector-effect: non-scaling-stroke; }
+.connection-lines circle { fill: currentColor; }
+.cloud-phones { position: relative; z-index: 1; align-items: start; }
+.phone-label { display: flex; flex-direction: column; gap: .15rem; font-size: .6rem; line-height: 1.2; }
+.phone-screen { position: relative; overflow: hidden; }
+.phone-screen::before { content: ''; position: absolute; inset: .8rem; border: 1px solid #ffffff30; border-radius: 8px; background: linear-gradient(180deg, #ffffff08, transparent); }
+.phone-screen::after { content: '↗'; position: absolute; top: 50%; left: 50%; display: grid; place-items: center; width: 2.7rem; height: 2.7rem; border: 1px solid var(--sky); border-radius: 50%; color: var(--sky); box-shadow: 0 0 0 8px #a5f3fc12, 0 0 0 18px #a5f3fc09; font: 1rem var(--mono); transform: translate(-50%, -50%); }
+.console-log { position: relative; z-index: 1; margin-bottom: 0; }
+.section-eyebrow, .card-number { color: #5147e0; }
+.feature-card { box-shadow: 3px 3px 0 var(--line); }
+.feature-card:nth-child(2) { background: #f3f2ff; }
+.text-link { flex: none; font: 700 .72rem var(--mono); text-transform: uppercase; letter-spacing: .05em; text-underline-offset: 5px; }
+.price-card { position: relative; overflow: hidden; }
+.price-card::before { content: ''; position: absolute; top: 0; left: 1.5rem; width: 2.5rem; height: 4px; background: var(--accent); }
+.phone-count { color: var(--muted); font: .75rem var(--mono); text-transform: uppercase; letter-spacing: .04em; }
+.price-card .btn { width: 100%; }
+.steps-list { margin: 0; padding: 0; list-style: none; }
+.step-card { min-height: 170px; }
+.step-card h3 { max-width: 270px; margin-bottom: 0; font-size: clamp(1.25rem, 2vw, 1.65rem); }
+.faq-list summary { display: flex; justify-content: space-between; align-items: center; gap: 1rem; list-style: none; }
+.faq-list summary::-webkit-details-marker { display: none; }
+.faq-list summary::after { content: '+'; flex: none; color: var(--accent); font: 1.3rem var(--mono); transition: transform .15s; }
+.faq-list details[open] summary::after { transform: rotate(45deg); }
+.faq-list details p { margin-bottom: 0; }
+.faq-list details a { text-underline-offset: 3px; }
+.contact h2 { max-width: 800px; }
+.contact .section-eyebrow { color: inherit; }
+.contact-copy { max-width: 620px; font-size: 1.08rem; }
+.contact-actions { display: flex; flex-wrap: wrap; gap: .8rem; }
+.contact .btn-ghost { border-color: var(--accent-ink); color: var(--accent-ink); }
+.contact .btn:focus-visible { outline-color: var(--accent-ink); }
+.contact .btn-ghost:hover { box-shadow: 4px 4px 0 var(--accent-ink); }
+.footer-meta { display: flex; flex-direction: column; align-items: flex-end; gap: 1rem; }
+.footer-copyright { margin: 0; font: .7rem var(--mono); white-space: nowrap; }
+
+@media (max-width: 980px) {
+  .nav-toggle { display: block; }
+  .site-nav { display: none; position: absolute; inset: 74px 0 auto; margin: 0; padding: 1.2rem 1.5rem; flex-direction: column; align-items: stretch; gap: 1rem; border-bottom: 1.5px solid var(--ink); background: var(--paper); }
+  .site-nav[data-open='true'] { display: flex; }
+  .site-nav a { padding: .35rem 0; }
+}
+@media (max-width: 680px) {
+  .contact-actions .btn { width: 100%; }
+  .footer-meta { align-items: flex-start; }
+  .footer-copyright { white-space: normal; }
+}
+@media (max-width: 520px) {
+  .console-head { font-size: .58rem; }
+  .connection-lines { top: 3.8rem; height: 140px; }
+  .phone-label { font-size: .52rem; }
+  .phone-screen::before { inset: .45rem; }
+  .phone-screen::after { width: 2rem; height: 2rem; box-shadow: 0 0 0 5px #a5f3fc12, 0 0 0 11px #a5f3fc09; }
+}
